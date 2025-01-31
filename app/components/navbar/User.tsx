@@ -1,7 +1,12 @@
 import React from "react";
+import { CiUser } from "react-icons/ci";
 
 const User = () => {
-  return <div className="hidden lg:flex">User</div>;
+  return (
+    <div className="">
+      <CiUser size={22} />
+    </div>
+  );
 };
 
 export default User;
