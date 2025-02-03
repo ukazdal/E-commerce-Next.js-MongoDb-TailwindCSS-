@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --themeColor: #000000;
+  --themeText: #3498da;
+  --linkHover: #ff0000;
+  --topbarBg: #3498df;
+  --topbarText: #3498ab;
+  --topbarTextHover: #3498cb;
+  --basketHover: #3498fb;
+  --basketBg: #3428db;
+  --basketText: #3494db;
+}
+
+.dark {
+  --themeColor: #1abc9c;
+  --topbarBg: #34495e;
+  --topbarText: #ffffff;
+  --topbarTextHover: #bdc3c7;
+}
+
+@layer components {
+  h1 {
+    @apply text-[36px] font-bold; /* 36px ve kalın (700) */
+  }
+  h2 {
+    @apply text-[30px] font-bold; /* 30px ve kalın (700) */
+  }
+  h3 {
+    @apply text-[24px] font-semibold; /* 24px ve yarı kalın (600) */
+  }
+  h4 {
+    @apply text-[20px] font-medium; /* 20px ve orta (500) */
+  }
+  h5 {
+    @apply text-[18px] font-normal; /* 18px ve normal (400) */
+  }
+  h6 {
+    @apply text-[16px] font-normal; /* 16px ve normal (400) */
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
