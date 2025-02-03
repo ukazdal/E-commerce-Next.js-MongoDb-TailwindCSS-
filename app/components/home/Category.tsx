@@ -14,7 +14,7 @@ const Category = () => {
     { id: 9, name: "Category 9", link: "/" },
   ];
   return (
-    <div className="bg-gray-200 p-4">
+    <div className="bg-gray-200">
       <ul className="flex items-center justify-center gap-2 lg:gap-10 overflow-x-auto">
         {categoryList.map((category, index) => (
           <li key={index}>

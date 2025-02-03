@@ -1,7 +1,12 @@
+import Container from "./components/container/Container";
+import Slider from "./components/slider/Sldier";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Anasayfa</h1>
-    </div>
+    <>
+      <Container>
+        <Slider />
+      </Container>
+    </>
   );
 }

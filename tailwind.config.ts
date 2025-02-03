@@ -9,8 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        themeColor: "#3498db",
+        themeText: "#2ecc71",
+        linkHover: "#2980b9",
+        topbarBg: "#2c3e50",
+        topbarText: "#ecf0f1",
+        topbarTextHover: "#bdc3c7",
+        basketHover: "#e74c3c",
+        basketBg: "#c0392b",
+        basketText: "#ffffff",
       },
     },
   },
