@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 interface ProductCardProps {
   id: string;
@@ -29,6 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   discounted_price,
   discount_rate,
 }) => {
+  const router = useRouter();
   const [hoveredImage, setHoveredImage] = useState(images[0]); // Varsayılan olarak ilk resmi göster
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -44,6 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div
+      onClick={() => router.push(`/product/${id}`)}
       key={id}
       className="relative group duration-300 border  rounded-md"
       onMouseMove={handleMouseMove}
@@ -87,21 +90,29 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Ürün Bilgileri */}
-        <div className="mt-2">
+        <div className="mt-2 ">
           <h2 className="text-sm font-semibold">{title}</h2>
-          <p className="text-xs my-1">{description}</p>
+          <p className="text-xs my-1 h-[80px] md:h-[40px] ">{description}</p>
           <p className="text-xs text-gray-500 my-2">{brand}</p>
-          <div className="flex items-center gap-x-2">
-            <p className="text-base font-bold">${price}</p>
-            {discounted_price && (
-              <p className="text-sm line-through text-gray-400">
-                ${discounted_price}
-              </p>
-            )}
-
-            {discount_rate && (
-              <p className="text-sm text-green-500">-{discount_rate}%</p>
-            )}
+          <div className="flex items-center justify-between flex-col md:flex-row gap-x-2">
+            <div>
+              {discounted_price ? (
+                <div className="flex items-center flex-col md:flex-row gap-x-2">
+                  <div className="flex items-center gap-x-2">
+                    <p className="text-sm line-through text-gray-400">
+                      ${price}
+                    </p>
+                    <p className="text-base font-bold">${discounted_price}</p>
+                  </div>
+                  {discount_rate && (
+                    <p className="text-sm text-green-500">-{discount_rate}%</p>
+                  )}
+                </div>
+              ) : (
+                <p className="text-base font-bold">${price}</p>
+              )}
+            </div>
+            <div>ranting</div>
           </div>
         </div>
       </div>

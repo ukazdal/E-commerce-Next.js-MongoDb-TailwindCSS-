@@ -85,14 +85,14 @@ const Slider: React.FC<SliderProps> = ({
 
   return (
     <div id={id} className="my-4 relative">
-      <div ref={slideRef} className="relative overflow-hidden rounded-t-md">
+      <div ref={slideRef} className="relative overflow-hidden rounded-md">
         <a href={sliderData.link}>
           <Image
             src={sliderData.value}
             height={300}
             width={1460}
             alt={sliderData.altIamgeText}
-            className="hover:scale-105 duration-1000 rounded-t-md"
+            className=" duration-1000 rounded-t-md"
             layout="intrinsic"
           />
         </a>

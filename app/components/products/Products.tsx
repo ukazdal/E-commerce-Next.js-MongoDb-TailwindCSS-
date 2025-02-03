@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import { PiArrowFatLineRightDuotone } from "react-icons/pi";
@@ -18,8 +20,8 @@ const Products = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {productsData.map((product) => (
           <ProductCard
-            key={randomKey()}
             id={product.id.toString()}
+            key={randomKey()}
             title={product.title}
             description={product.description}
             badges={product.badges}

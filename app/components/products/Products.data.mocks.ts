@@ -1,6 +1,6 @@
 const productsData = [
   {
-    id: 1,
+    id: 11113123123123,
     title: "Dağcı Botu",
     brand: "MountainPro",
     description:
@@ -16,7 +16,7 @@ const productsData = [
     ],
   },
   {
-    id: 2,
+    id: 222213412341234,
     title: "Outdoor Çadır",
     brand: "CampingGear",
     description:
@@ -32,7 +32,7 @@ const productsData = [
     ],
   },
   {
-    id: 3,
+    id: 33334123412341234,
     title: "Kamp Sandalyeleri",
     brand: "Outfitters",
     description:
@@ -46,7 +46,7 @@ const productsData = [
     ],
   },
   {
-    id: 4,
+    id: 444412341234123,
     title: "Kış Montu",
     brand: "FrostGuard",
     description:
@@ -62,7 +62,7 @@ const productsData = [
     ],
   },
   {
-    id: 5,
+    id: 5555123412341,
     title: "Sırt Çantası",
     brand: "HikerPack",
     description:
@@ -78,7 +78,7 @@ const productsData = [
     ],
   },
   {
-    id: 6,
+    id: 6666123412341,
     title: "Termal Mat",
     brand: "CampX",
     description:
@@ -94,7 +94,7 @@ const productsData = [
     ],
   },
   {
-    id: 7,
+    id: 77713412341234,
     title: "Kamp Mangal Seti",
     brand: "GrillMaster",
     description:
@@ -110,7 +110,7 @@ const productsData = [
     ],
   },
   {
-    id: 8,
+    id: 8881324123412,
     title: "Termos",
     brand: "EcoTherm",
     description:
@@ -126,7 +126,7 @@ const productsData = [
     ],
   },
   {
-    id: 9,
+    id: 999913241234,
     title: "Trekking Ayakkabısı",
     brand: "TrailRun",
     description:
@@ -142,7 +142,7 @@ const productsData = [
     ],
   },
   {
-    id: 10,
+    id: 1010101341324,
     title: "Uyku Tulumu",
     brand: "DreamSleep",
     description:
