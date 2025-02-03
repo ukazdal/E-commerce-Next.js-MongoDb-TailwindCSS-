@@ -38,13 +38,11 @@ const productsData = [
     description:
       "Konforlu oturma alanı ve taşınabilir yapısı ile kamp için ideal sandalyeler.",
     price: 150.0,
-    discounted_price: 129.0,
-    discount_rate: 14.0,
     stock: 0, // Stokta yok
     badges: { new: false },
     images: [
+      "https://images.pexels.com/photos/1545314/pexels-photo-1545314.jpeg",
       "https://images.pexels.com/photos/1211332/pexels-photo-1211332.jpeg",
-      "https://images.pexels.com/photos/1154856/pexels-photo-1154856.jpeg",
     ],
   },
   {
