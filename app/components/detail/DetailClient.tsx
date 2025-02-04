@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Container from "../container/Container";
+import Counter from "../counter/Counter";
+import { useState } from "react";
 
 interface Product {
   id: number;
@@ -16,7 +18,37 @@ interface Product {
   images: string[];
 }
 
+export type ProductCardProps = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  quantity: number;
+  inStock: number;
+};
+
 const DetailClient = ({ product }: { product: Product }) => {
+  const [productCard, setProductCard] = useState<ProductCardProps>({
+    id: product.id.toString(),
+    name: product.title,
+    description: product.description,
+    price: product.price,
+    image: product.images[0],
+    quantity: 1,
+    inStock: product.stock,
+  });
+
+  const increaseFunc = () => {
+    if (productCard.quantity == 10) return;
+    setProductCard((prev) => ({ ...prev, quantity: prev.quantity + 1 }));
+  };
+
+  const decreaseFunc = () => {
+    if (productCard.quantity == 1) return;
+    setProductCard((prev) => ({ ...prev, quantity: prev.quantity - 1 }));
+  };
+
   return (
     <Container>
       <div className="grid grid-cols-12 gap-5">
@@ -53,6 +85,21 @@ const DetailClient = ({ product }: { product: Product }) => {
             </div>
             <div>ranting</div>
           </div>
+          <div>
+            {product.stock > 0 ? (
+              <p className="text-green-500">In Stock</p>
+            ) : (
+              <p className="text-red-500">Out of Stock</p>
+            )}
+          </div>
+          <Counter
+            increaseFunc={increaseFunc}
+            decreaseFunc={decreaseFunc}
+            productCard={productCard}
+          />
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2">
+            Add To Card
+          </button>
         </div>
       </div>
     </Container>
