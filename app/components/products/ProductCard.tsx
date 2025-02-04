@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface ProductCardProps {
@@ -43,12 +43,26 @@ const ProductCard: React.FC<ProductCardProps> = ({
     // Mouse sol taraftaysa ilk resmi, sağ taraftaysa ikinci resmi göster
     setHoveredImage(clientX < midpoint ? images[0] : images[1]);
   };
+  const handlePush = () => {
+    const formattedTitle = id
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9\s-]/g, "") // Özel karakterleri temizler
+      .replace(/\s+/g, "-"); // Boşlukları "-" yapar
+
+    router.push(`/products/${formattedTitle}`);
+  };
 
   return (
     <div
-      onClick={() => router.push(`/product/${id}`)}
+      onClick={handlePush}
       key={id}
-      className="relative group duration-300 border  rounded-md"
+      className="relative group duration-300 border rounded-md cursor-pointer hover:shadow-lg"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setHoveredImage(images[0])} // Mouse çıkınca ilk resme dön
     >
