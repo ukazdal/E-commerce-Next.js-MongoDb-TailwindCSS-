@@ -1,21 +1,29 @@
-import { IconType } from "react-icons";
-
 interface ButtonProps {
   text: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   small?: boolean;
   outline?: boolean;
-  icon: IconType;
+  //icon?: IconType;
   diseable?: boolean;
 }
 
-const Button = ({text, onClick, small, outline, diseable icon:Icon}) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  small,
+  outline,
+  diseable,
+  //icon: Icon,
+}) => {
   return (
     <button
-      onClick={() => {}}
-      className="bg-blue-500 text-white px-4 py-2 rounded-md"
+      disabled={diseable}
+      onClick={onClick}
+      className={`rounded-lg  px-3 py-3 hover:shadow-lg duration-300 ${
+        small ? "w-[200px]" : "w-full"
+      } ${outline ? "border text-black" : "bg-black text-white"}`}
     >
-      Buton
+      {text}
     </button>
   );
 };
