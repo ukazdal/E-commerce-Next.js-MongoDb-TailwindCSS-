@@ -3,15 +3,19 @@
 import Image from "next/image";
 import Container from "../container/Container";
 import Counter from "../counter/Counter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../button/Button";
 import Tab from "../tab/Tab";
 import Comment from "../tabPanel/Comment";
 import ProdcutInfo from "../tabPanel/ProdcutInfo";
 import Installment from "../tabPanel/Installment";
 import { Product, ProductCardProps } from "./Types.Product";
+import UseCart from "@/hooks/useCart";
 
 const DetailClient = ({ product }: { product: Product }) => {
+  const { productsCartQty, addToBasket, prdCard } = UseCart();
+  const [displayButton, setDisplayButton] = useState(false);
+
   const [productCard, setProductCard] = useState<ProductCardProps>({
     id: product.id.toString(),
     name: product.title,
@@ -21,6 +25,19 @@ const DetailClient = ({ product }: { product: Product }) => {
     quantity: 1,
     inStock: product.stock,
   });
+
+  console.log(productsCartQty, "productsCartQty");
+  console.log(prdCard, "prdCard");
+
+  useEffect(() => {
+    setDisplayButton(false);
+    let controlDisplay: number = prdCard?.findIndex(
+      (cart) => cart.id == productCard.id
+    );
+    if (controlDisplay > -1) {
+      setDisplayButton(true);
+    }
+  }, []);
 
   const increaseFunc = () => {
     if (productCard.quantity == 10) return;
@@ -102,8 +119,54 @@ const DetailClient = ({ product }: { product: Product }) => {
               decreaseFunc={decreaseFunc}
               productCard={productCard}
             />
-            {product.stock > 0 ? (
-              <Button small text="Sepete Ekle" onClick={() => {}} outline />
+            {displayButton ? (
+              <>
+                {" "}
+                {product.stock > 0 ? (
+                  <Button
+                    small
+                    text="Sepete Ekli"
+                    onClick={() => addToBasket(productCard)}
+                    outline
+                  />
+                ) : (
+                  <Button
+                    small
+                    text="Stokta Yok"
+                    onClick={() => {}}
+                    diseable
+                    outline
+                  />
+                )}
+              </>
+            ) : (
+              <>
+                {product.stock > 0 ? (
+                  <Button
+                    small
+                    text="Sepete Ekle"
+                    onClick={() => addToBasket(productCard)}
+                    outline
+                  />
+                ) : (
+                  <Button
+                    small
+                    text="Stokta Yok"
+                    onClick={() => {}}
+                    diseable
+                    outline
+                  />
+                )}
+              </>
+            )}
+
+            {/* {product.stock > 0 ? (
+              <Button
+                small
+                text="Sepete Ekle"
+                onClick={() => addToBasket(productCard)}
+                outline
+              />
             ) : (
               <Button
                 small
@@ -112,7 +175,7 @@ const DetailClient = ({ product }: { product: Product }) => {
                 diseable
                 outline
               />
-            )}
+            )} */}
           </div>
         </div>
       </Container>

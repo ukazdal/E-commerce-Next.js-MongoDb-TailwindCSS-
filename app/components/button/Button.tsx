@@ -1,10 +1,12 @@
+import { IconType } from "react-icons";
+
 interface ButtonProps {
   text: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   small?: boolean;
   outline?: boolean;
-  //icon?: IconType;
   diseable?: boolean;
+  icon?: IconType;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   small,
   outline,
   diseable,
-  //icon: Icon,
+  icon: Icon,
 }) => {
   return (
     <button
@@ -30,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
           }
          `}
     >
+      {Icon && <Icon className="mr-2" />}
       {text}
     </button>
   );
