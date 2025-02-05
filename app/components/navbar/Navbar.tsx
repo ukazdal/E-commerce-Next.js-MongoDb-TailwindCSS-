@@ -6,7 +6,6 @@ import User from "./User";
 import HamburgerMenu from "./HamburgerMenu";
 import Category from "../home/Category";
 import Container from "../container/Container";
-import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,9 +13,7 @@ const Navbar = () => {
       <Container>
         <div className="grid grid-cols-12 px-4 lg:px-10 gap-3 lg:gap-10 items-center">
           <div className="col-span-3 md:col-span-2 lg:col-span-3">
-            <Link href={"/"}>
-              <Logo />
-            </Link>
+            <Logo />
           </div>
 
           <div className="col-span-6 md:col-span-8 lg:col-span-6">

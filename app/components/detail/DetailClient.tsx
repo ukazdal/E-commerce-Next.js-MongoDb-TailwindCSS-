@@ -35,7 +35,7 @@ const DetailClient = ({ product }: { product: Product }) => {
   const tabData = [
     {
       title: "Ürün Detay",
-      content: <ProdcutInfo product={product} />,
+      content: <ProdcutInfo prd={product} />,
       link: "tab1",
     },
     {
@@ -102,7 +102,17 @@ const DetailClient = ({ product }: { product: Product }) => {
               decreaseFunc={decreaseFunc}
               productCard={productCard}
             />
-            <Button small text="Sepete Ekle" onClick={() => {}} />
+            {product.stock > 0 ? (
+              <Button small text="Sepete Ekle" onClick={() => {}} outline />
+            ) : (
+              <Button
+                small
+                text="Stokta Yok"
+                onClick={() => {}}
+                diseable
+                outline
+              />
+            )}
           </div>
         </div>
       </Container>
