@@ -1,8 +1,11 @@
 "use client";
+
+import { useParams } from "next/navigation";
 import DetailClient from "@/app/components/detail/DetailClient";
 import productsData from "@/app/components/products/Products.data.mocks";
 
-const ProductDetail = ({ params }: { params: { productId: string } }) => {
+const ProductDetail = () => {
+  const params = useParams();
   const productId = Number(params.productId);
 
   const product = productsData.find((p) => p.id === productId);

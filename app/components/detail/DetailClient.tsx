@@ -5,29 +5,11 @@ import Container from "../container/Container";
 import Counter from "../counter/Counter";
 import { useState } from "react";
 import Button from "../button/Button";
-
-interface Product {
-  id: number;
-  title: string;
-  brand: string;
-  description: string;
-  price: number;
-  discounted_price?: number;
-  discount_rate?: number;
-  stock: number;
-  badges: { new: boolean };
-  images: string[];
-}
-
-export type ProductCardProps = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  quantity: number;
-  inStock: number;
-};
+import Tab from "../tab/Tab";
+import Comment from "../tabPanel/Comment";
+import ProdcutInfo from "../tabPanel/ProdcutInfo";
+import Installment from "../tabPanel/Installment";
+import { Product, ProductCardProps } from "./Types.Product";
 
 const DetailClient = ({ product }: { product: Product }) => {
   const [productCard, setProductCard] = useState<ProductCardProps>({
@@ -50,9 +32,27 @@ const DetailClient = ({ product }: { product: Product }) => {
     setProductCard((prev) => ({ ...prev, quantity: prev.quantity - 1 }));
   };
 
+  const tabData = [
+    {
+      title: "Ürün Detay",
+      content: <ProdcutInfo product={product} />,
+      link: "tab1",
+    },
+    {
+      title: "Yorumlar",
+      content: <Comment prd={product} />,
+      link: "tab2",
+    },
+    {
+      title: "Taksit Tablosu",
+      content: <Installment />,
+      link: "tab3",
+    },
+  ];
+
   return (
     <>
-      <Container>
+      <Container className="mb-10">
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-12 md:col-span-6">
             {product.images.map((image: string) => (
@@ -85,7 +85,10 @@ const DetailClient = ({ product }: { product: Product }) => {
                   <p className="text-base font-bold">${product.price}</p>
                 )}
               </div>
-              <div>ranting</div>
+              <div className="flex items-center gap-x-2">
+                <div>Comments onclick trigger to commnts tab</div>
+                <div> / ranting</div>
+              </div>
             </div>
             <div>
               {product.stock > 0 ? (
@@ -104,11 +107,7 @@ const DetailClient = ({ product }: { product: Product }) => {
         </div>
       </Container>
 
-      <div className="relative my-10 flex items-center">
-        <div className="flex-grow border-t border-dashed border-gray-300"></div>
-        <span className="px-4 text-gray-500">Ürün Detayları</span>
-        <div className="flex-grow border-t border-dashed border-gray-300"></div>
-      </div>
+      <Tab data={tabData} />
     </>
   );
 };
