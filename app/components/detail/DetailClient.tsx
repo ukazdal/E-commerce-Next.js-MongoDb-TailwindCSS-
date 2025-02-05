@@ -30,14 +30,10 @@ const DetailClient = ({ product }: { product: Product }) => {
   console.log(prdCard, "prdCard");
 
   useEffect(() => {
-    setDisplayButton(false);
-    let controlDisplay: number = prdCard?.findIndex(
-      (cart) => cart.id == productCard.id
-    );
-    if (controlDisplay > -1) {
-      setDisplayButton(true);
-    }
-  }, []);
+    const controlDisplay: number =
+      prdCard?.findIndex((cart) => cart.id == productCard.id) ?? -1;
+    setDisplayButton(controlDisplay > -1);
+  }, [prdCard, productCard]);
 
   const increaseFunc = () => {
     if (productCard.quantity == 10) return;
@@ -121,7 +117,6 @@ const DetailClient = ({ product }: { product: Product }) => {
             />
             {displayButton ? (
               <>
-                {" "}
                 {product.stock > 0 ? (
                   <Button
                     small
@@ -130,13 +125,7 @@ const DetailClient = ({ product }: { product: Product }) => {
                     outline
                   />
                 ) : (
-                  <Button
-                    small
-                    text="Stokta Yok"
-                    onClick={() => {}}
-                    diseable
-                    outline
-                  />
+                  <Button small text="Stokta Yok" onClick={() => {}} diseable />
                 )}
               </>
             ) : (

@@ -1,4 +1,4 @@
-import { ProductCardProps } from "../detail/DetailClient";
+import { ProductCardProps } from "../detail/Types.Product";
 
 interface CounterProps {
   productCard: ProductCardProps;

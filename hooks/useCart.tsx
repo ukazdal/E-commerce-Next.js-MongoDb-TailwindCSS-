@@ -1,6 +1,12 @@
 "use client";
 import { ProductCardProps } from "@/app/components/detail/Types.Product";
-import { createContext, useCallback, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface CartContextProps {
   productsCartQty: number;
@@ -11,29 +17,33 @@ interface CartContextProps {
 const CartContext = createContext<CartContextProps | null>(null);
 
 interface Props {
-  [propName: string]: any;
+  children?: React.ReactNode;
 }
 
 export const CartContextProvider = (props: Props) => {
   const [productsCartQty, setProductsCartQty] = useState(0);
-  const [prdCard, setPrdCard] = useState<ProductCardProps | null>(null);
+  const [prdCard, setPrdCard] = useState<ProductCardProps[]>([]);
 
-  const addToBasket = useCallback(
-    (product: ProductCardProps) => {
-      setPrdCard((prev) => {
-        let updatedCart;
-        if (prev) {
-          updatedCart = [...prev, product];
-        } else {
-          updatedCart = [product];
-        }
-        return updatedCart;
-      });
-    },
-    [prdCard]
-  );
+  useEffect(() => {
+    const getItem: any = localStorage.getItem("prdCard");
+    const getItemParse: ProductCardProps[] | null = JSON.parse(getItem);
+    setPrdCard(getItemParse);
+  }, []);
 
-  let value = {
+  const addToBasket = useCallback((product: ProductCardProps) => {
+    setPrdCard((prev) => {
+      let updatedCart;
+      if (prev) {
+        updatedCart = [...prev, product];
+      } else {
+        updatedCart = [product];
+      }
+      localStorage.setItem("prdCard", JSON.stringify(updatedCart));
+      return updatedCart;
+    });
+  }, []);
+
+  const value = {
     productsCartQty,
     addToBasket,
     prdCard,
