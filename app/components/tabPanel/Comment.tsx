@@ -1,6 +1,7 @@
 "use client";
 
 import Avatar from "../avatar/Avatar";
+import Button from "../button/Button";
 
 interface Review {
   user: string;
@@ -42,7 +43,7 @@ const Comment = ({ prd }: { prd: Product }) => {
           className="border p-2 w-full"
           placeholder="Yorumunuzu buraya yazınız"
         />
-        {/* <Button text="Yorum yap" onClick={undefined} small /> */}
+        <Button text="Yorum yap" onClick={() => {}} small />
       </div>
     </div>
   );

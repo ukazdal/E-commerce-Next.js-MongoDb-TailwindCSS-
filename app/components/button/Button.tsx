@@ -1,21 +1,21 @@
-import { IconType } from "react-icons";
-
 interface ButtonProps {
-  text: string;
+  text?: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   small?: boolean;
+  xsmall?: boolean;
   outline?: boolean;
   diseable?: boolean;
-  icon?: IconType;
+  icon?: React.ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
   text,
   onClick,
   small,
+  xsmall,
   outline,
   diseable,
-  icon: Icon,
+  icon,
 }) => {
   return (
     <button
@@ -24,6 +24,11 @@ const Button: React.FC<ButtonProps> = ({
       className={`rounded-lg  px-3 py-3 hover:shadow-lg duration-300 ${
         small ? "w-[200px]" : "w-full"
       }
+        ${
+          xsmall
+            ? "w-8 h-8 flex items-center justify-center"
+            : "w-full px-3 py-3"
+        }
          ${diseable ? "text-gray-400 cursor-not-allowed opacity-50" : ""} 
           ${
             outline
@@ -32,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
           }
          `}
     >
-      {Icon && <Icon className="mr-2" />}
+      {icon}
       {text}
     </button>
   );
