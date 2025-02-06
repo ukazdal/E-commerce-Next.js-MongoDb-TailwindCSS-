@@ -1,10 +1,10 @@
 import React from "react";
-import { CiUser } from "react-icons/ci";
+import { FaUserAlt } from "react-icons/fa";
 
 const User = () => {
   return (
     <div className="">
-      <CiUser size={22} />
+      <FaUserAlt size={22} />
     </div>
   );
 };
