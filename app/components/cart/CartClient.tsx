@@ -6,7 +6,7 @@ import Button from "../button/Button";
 import { CiTrash } from "react-icons/ci";
 
 const CartClient = () => {
-  const { prdCard } = UseCart();
+  const { prdCard, removeCart, removeAllCart } = UseCart();
 
   console.log(prdCard, "prdCard");
   if (!prdCard || prdCard.length == 0) {
@@ -43,7 +43,7 @@ const CartClient = () => {
                       {product.price}
                       <Button
                         icon={<CiTrash size={24} />}
-                        onClick={() => {}}
+                        onClick={() => removeCart(product)}
                         xsmall
                       />
                     </div>
@@ -51,6 +51,7 @@ const CartClient = () => {
                 </div>
               ))}
             </div>
+            <Button onClick={() => removeAllCart(prdCard[0])} />
           </div>
         </div>
         <div className="col-span-6 relative">

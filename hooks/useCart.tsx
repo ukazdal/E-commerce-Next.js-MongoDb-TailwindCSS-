@@ -7,11 +7,14 @@ import {
   useEffect,
   useState,
 } from "react";
+import toast from "react-hot-toast";
 
 interface CartContextProps {
   productsCartQty: number;
-  prdCard: ProductCardProps[] | null;
+  prdCard: ProductCardProps[];
   addToBasket: (product: ProductCardProps) => void;
+  removeCart: (product: ProductCardProps) => void;
+  removeAllCart: (product: ProductCardProps) => void;
 }
 
 const CartContext = createContext<CartContextProps | null>(null);
@@ -26,8 +29,14 @@ export const CartContextProvider = (props: Props) => {
 
   useEffect(() => {
     const getItem: any = localStorage.getItem("prdCard");
-    const getItemParse: ProductCardProps[] | null = JSON.parse(getItem);
+    const getItemParse: ProductCardProps[] = JSON.parse(getItem) || [];
     setPrdCard(getItemParse);
+  }, []);
+
+  const removeAllCart = useCallback(() => {
+    setPrdCard([]);
+    toast.success("Delete to cart");
+    localStorage.setItem("prdCard", JSON.stringify(null));
   }, []);
 
   const addToBasket = useCallback((product: ProductCardProps) => {
@@ -38,15 +47,32 @@ export const CartContextProvider = (props: Props) => {
       } else {
         updatedCart = [product];
       }
+      toast.success("Added to cart");
       localStorage.setItem("prdCard", JSON.stringify(updatedCart));
       return updatedCart;
     });
   }, []);
 
+  const removeCart = useCallback(
+    (product: ProductCardProps) => {
+      if (prdCard) {
+        const filteredProducts = prdCard.filter(
+          (cartItem) => cartItem.id !== product.id
+        );
+        setPrdCard(filteredProducts);
+        toast.success("Remove to cart");
+        localStorage.setItem("prdCard", JSON.stringify(filteredProducts));
+      }
+    },
+    [prdCard]
+  );
+
   const value = {
     productsCartQty,
     addToBasket,
     prdCard,
+    removeCart,
+    removeAllCart,
   };
 
   return <CartContext.Provider value={value} {...props} />;
