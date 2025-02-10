@@ -31,22 +31,6 @@ const CartInfo = () => {
             <div className="col-span-2 md:col-span-1 w-full flex items-center justify-end gap-x-5">
               <h5>{product.name}</h5>
               <h6>${product.price}</h6>
-              {/* <div>
-                <Counter
-                  productCard={product}
-                  decreaseFunc={() => deleteCardQuntity(product)}
-                  increaseFunc={() => addCardQuntity(product)}
-                  key={product.id}
-                />
-              </div> */}
-              {/* <div className="flex items-center gap-4">
-            
-                <Button
-                  icon={<CiTrash size={24} />}
-                  onClick={() => removeCart(product)}
-                  xsmall
-                />
-              </div> */}
             </div>
           </div>
         ))}
