@@ -14,7 +14,7 @@ interface CartContextProps {
   prdCard: ProductCardProps[];
   addToBasket: (product: ProductCardProps) => void;
   removeCart: (product: ProductCardProps) => void;
-  removeAllCart: (product: ProductCardProps) => void;
+  removeAllCart: () => void;
 }
 
 const CartContext = createContext<CartContextProps | null>(null);
@@ -24,12 +24,12 @@ interface Props {
 }
 
 export const CartContextProvider = (props: Props) => {
-  const [productsCartQty, setProductsCartQty] = useState(0);
+  const [productsCartQty] = useState(0);
   const [prdCard, setPrdCard] = useState<ProductCardProps[]>([]);
 
   useEffect(() => {
-    const getItem: any = localStorage.getItem("prdCard");
-    const getItemParse: ProductCardProps[] = JSON.parse(getItem) || [];
+    const getItem: string | null = localStorage.getItem("prdCard");
+    const getItemParse: ProductCardProps[] = getItem ? JSON.parse(getItem) : [];
     setPrdCard(getItemParse);
   }, []);
 

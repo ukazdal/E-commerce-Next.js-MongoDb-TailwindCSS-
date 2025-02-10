@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Container from "./components/container/Container";
 import CartProvider from "@/propvider/CartProvider";
 import { Toaster } from "react-hot-toast";
+import { metadata } from "./components/metaData/metaData";
+import ClientLayout from "./components/clientLayout/ClientLayout";
+
+export { metadata };
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +16,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "UK - Next.js",
-  description: "E-commerce-Next.js-MongoDb-TailwindCSS",
-};
 
 export default function RootLayout({
   children,
@@ -35,11 +30,7 @@ export default function RootLayout({
         <Toaster position="top-right" reverseOrder={false} />
         <CartProvider>
           <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow py-5">
-              <Container>{children}</Container>
-            </main>
-            <Footer />
+            <ClientLayout>{children}</ClientLayout>
           </div>
         </CartProvider>
       </body>

@@ -4,6 +4,8 @@ import UseCart from "@/hooks/useCart";
 import Container from "../container/Container";
 import Button from "../button/Button";
 import { CiTrash } from "react-icons/ci";
+import Image from "next/image";
+import CartInfo from "./CartInfo";
 
 const CartClient = () => {
   const { prdCard, removeCart, removeAllCart } = UseCart();
@@ -12,6 +14,7 @@ const CartClient = () => {
   if (!prdCard || prdCard.length == 0) {
     return <>Sepetinizde ürün bulunmuyor.</>;
   }
+
   return (
     <Container>
       <div className="grid grid-cols-12 gap-x-5">
@@ -29,8 +32,9 @@ const CartClient = () => {
                   className="grid grid-cols-2 gap-4 border-b py-4"
                 >
                   <div className="col-span-2 md:col-span-1 flex items-center gap-4">
-                    <img
+                    <Image
                       src={product.image}
+                      alt={product.name}
                       width={75}
                       height={75}
                       className="rounded-lg p-1 border"
@@ -51,15 +55,11 @@ const CartClient = () => {
                 </div>
               ))}
             </div>
-            <Button onClick={() => removeAllCart(prdCard[0])} />
+            <Button onClick={() => removeAllCart()} />
           </div>
         </div>
         <div className="col-span-6 relative">
-          <div className="sticyk top-2 ">
-            <span>
-              total fiyat ödemeler felan bu alanda gözükecek compoenen yapılacak
-            </span>
-          </div>
+          <CartInfo />
         </div>
       </div>
     </Container>
