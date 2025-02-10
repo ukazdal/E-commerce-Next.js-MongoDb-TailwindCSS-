@@ -14,6 +14,8 @@ interface CartContextProps {
   prdCard: ProductCardProps[];
   addToBasket: (product: ProductCardProps) => void;
   removeCart: (product: ProductCardProps) => void;
+  addCardQuntity: (product: ProductCardProps) => void;
+  deleteCardQuntity: (product: ProductCardProps) => void;
   removeAllCart: () => void;
 }
 
@@ -67,12 +69,58 @@ export const CartContextProvider = (props: Props) => {
     [prdCard]
   );
 
+  const addCardQuntity = useCallback(
+    (product: ProductCardProps) => {
+      let updatedCart;
+      if (product.quantity == 10) {
+        return toast.error("You can't add more than 10 products");
+      }
+      if (prdCard) {
+        updatedCart = [...prdCard];
+        const existingItem = prdCard.findIndex(
+          (item) => item.id === product.id
+        );
+        if (existingItem > -1) {
+          updatedCart[existingItem].quantity = ++updatedCart[existingItem]
+            .quantity;
+        }
+        setPrdCard(updatedCart);
+        localStorage.setItem("prdCard", JSON.stringify(updatedCart));
+      }
+    },
+    [prdCard]
+  );
+
+  const deleteCardQuntity = useCallback(
+    (product: ProductCardProps) => {
+      let updatedCart;
+      if (product.quantity == 1) {
+        return toast.error("You can't delete less than 1 products");
+      }
+      if (prdCard) {
+        updatedCart = [...prdCard];
+        const existingItem = prdCard.findIndex(
+          (item) => item.id === product.id
+        );
+        if (existingItem > -1) {
+          updatedCart[existingItem].quantity = --updatedCart[existingItem]
+            .quantity;
+        }
+        setPrdCard(updatedCart);
+        localStorage.setItem("prdCard", JSON.stringify(updatedCart));
+      }
+    },
+    [prdCard]
+  );
+
   const value = {
     productsCartQty,
     addToBasket,
     prdCard,
     removeCart,
     removeAllCart,
+    addCardQuntity,
+    deleteCardQuntity,
   };
 
   return <CartContext.Provider value={value} {...props} />;

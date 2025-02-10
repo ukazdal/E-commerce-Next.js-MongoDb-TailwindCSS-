@@ -1,5 +1,6 @@
 import UseCart from "@/hooks/useCart";
 import { ProductCardProps } from "../detail/Types.Product";
+import Image from "next/image";
 
 const CartInfo = () => {
   const { prdCard } = UseCart();
@@ -11,8 +12,47 @@ const CartInfo = () => {
 
   const productCargo = 20;
   return (
-    <div className="shadow-lg p-4">
-      <ul className="bg-gray-200 p-2 rounded-lg">
+    <div className="p-5">
+      <div>
+        {prdCard.map((product, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 gap-4 border-b last:border-b-0 py-4"
+          >
+            <div className="col-span-2 md:col-span-1 flex items-center gap-4">
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={60}
+                height={60}
+                className="rounded-md max-w-16 max-h-16 w-full h-full object-cover"
+              />
+            </div>
+            <div className="col-span-2 md:col-span-1 w-full flex items-center justify-end gap-x-5">
+              <h5>{product.name}</h5>
+              <h6>${product.price}</h6>
+              {/* <div>
+                <Counter
+                  productCard={product}
+                  decreaseFunc={() => deleteCardQuntity(product)}
+                  increaseFunc={() => addCardQuntity(product)}
+                  key={product.id}
+                />
+              </div> */}
+              {/* <div className="flex items-center gap-4">
+            
+                <Button
+                  icon={<CiTrash size={24} />}
+                  onClick={() => removeCart(product)}
+                  xsmall
+                />
+              </div> */}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <ul className="bg-gray-50 mt-2 p-2 rounded-lg">
         <li className="flex justify-between border-b border-gray-600 py-3">
           <div>Price</div>
           <div>${prdCardTotal}</div>

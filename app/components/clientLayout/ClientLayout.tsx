@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Navbar from "../navbar/Navbar";
-import Container from "../container/Container";
 import Footer from "../footer/Footer";
 
 export default function ClientLayout({
@@ -16,9 +15,7 @@ export default function ClientLayout({
   return (
     <>
       {!hideLayout && <Navbar />}
-      <main className="flex-grow p-5">
-        <Container>{children}</Container>
-      </main>
+      <main className="flex-grow">{children}</main>
       {!hideLayout && <Footer />}
     </>
   );

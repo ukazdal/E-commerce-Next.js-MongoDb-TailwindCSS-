@@ -1,14 +1,11 @@
 "use client";
 
 import UseCart from "@/hooks/useCart";
-import Container from "../container/Container";
-import Button from "../button/Button";
-import { CiTrash } from "react-icons/ci";
-import Image from "next/image";
 import CartInfo from "./CartInfo";
+import Link from "next/link";
 
 const CartClient = () => {
-  const { prdCard, removeCart, removeAllCart } = UseCart();
+  const { prdCard } = UseCart();
 
   console.log(prdCard, "prdCard");
   if (!prdCard || prdCard.length == 0) {
@@ -16,53 +13,166 @@ const CartClient = () => {
   }
 
   return (
-    <Container>
-      <div className="grid grid-cols-12 gap-x-5">
-        <div className="col-span-6">
-          {" "}
-          <div className="">
-            <div>
-              <h2>Sepetim</h2>
-              <p>(Ürün adet 2)</p>
-            </div>
-            <div>
-              {prdCard.map((product, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-2 gap-4 border-b py-4"
-                >
-                  <div className="col-span-2 md:col-span-1 flex items-center gap-4">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={75}
-                      height={75}
-                      className="rounded-lg p-1 border"
-                    />
-                    <h3>{product.name}</h3>
-                  </div>
-                  <div className="col-span-2 md:col-span-1 flex items-center justify-between">
-                    <span>{product.quantity}</span>
-                    <div className="flex items-center gap-4">
-                      {product.price}
-                      <Button
-                        icon={<CiTrash size={24} />}
-                        onClick={() => removeCart(product)}
-                        xsmall
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <Button onClick={() => removeAllCart()} />
+    <div className="grid grid-cols-12 gap-x-5 bg-slate-50">
+      <div className="col-span-6 relative m-5 md:m-20">
+        <CartInfo />
+      </div>
+      <div className="col-span-6 p-5 bg-gray-800 h-screen">
+        <div className="flex items-start justify-between">
+          <Link href="/">
+            <img src="/logo.png" alt={"UK - NextJS"} width={200} height={100} />
+          </Link>
+          <div>
+            <span className="text-white">
+              Do you already have an account? <Link href={"/"}>Login</Link>
+            </span>
           </div>
         </div>
-        <div className="col-span-6 relative">
-          <CartInfo />
+        <div>
+          <form action="#" method="POST">
+            <div className="grid grid-cols-6 gap-6">
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-medium text-white"
+                >
+                  First name
+                </label>
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="last-name"
+                  className="block text-sm font-medium text-white"
+                >
+                  Last name
+                </label>
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  autoComplete="family-name"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-4">
+                <label
+                  htmlFor="email-address"
+                  className="block text-sm font-medium text-white"
+                >
+                  Email address
+                </label>
+                <input
+                  type="text"
+                  name="email-address"
+                  id="email-address"
+                  autoComplete="email"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="country"
+                  className="block text-sm font-medium text-white"
+                >
+                  Country
+                </label>
+                <select
+                  id="country"
+                  name="country"
+                  autoComplete="country-name"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                >
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                  <option>Turkey</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Italy</option>
+                  <option>Spain</option>
+                  <option>United Kingdom</option>
+                  <option>Japan</option>
+                </select>
+              </div>
+
+              <div className="col-span-6">
+                <label
+                  htmlFor="street-address"
+                  className="block text-sm font-medium text-white"
+                >
+                  Street address
+                </label>
+                <input
+                  type="text"
+                  name="street-address"
+                  id="street-address"
+                  autoComplete="street-address"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                <label
+                  htmlFor="city"
+                  className="block text-sm font-medium text-white"
+                >
+                  City
+                </label>
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  autoComplete="address-level2"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                <label
+                  htmlFor="region"
+                  className="block text-sm font-medium text-white"
+                >
+                  State / Province
+                </label>
+                <input
+                  type="text"
+                  name="region"
+                  id="region"
+                  autoComplete="address-level1"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+
+              <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                <label
+                  htmlFor="postal-code"
+                  className="block text-sm font-medium text-white"
+                >
+                  ZIP / Postal code
+                </label>
+                <input
+                  type="text"
+                  name="postal-code"
+                  id="postal-code"
+                  autoComplete="postal-code"
+                  className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                />
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
