@@ -6,6 +6,7 @@ import Input from "../input/Input";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 import SectionTitle from "../sectionTitle/SectionTitle";
+import Link from "next/link";
 
 const RegisterClient = () => {
   const {
@@ -15,18 +16,18 @@ const RegisterClient = () => {
   } = useForm<FieldValues>();
   const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
   return (
-    <div className="bg-gray-800 h-screen w-full">
-      <AuthContainer>
+    <div className="bg-gray-800 md:h-screen w-full">
+      <AuthContainer className="flex flex-col  w-full max-w-[460px] px-4">
         <form
           action="#"
           method="POST"
-          className="bg-gray-500 p-5 rounded-md shadow-md"
+          className="bg-gray-500 p-5 rounded-md shadow-md w-full "
         >
           <SectionTitle title="Register" allClass="text-white" />
           <div className="grid grid-cols-6 gap-x-4 mb-5">
             <div className="col-span-6 sm:col-span-3">
               <Input
-                label="First name"
+                placeholder="First name"
                 id="name"
                 type="text"
                 register={register}
@@ -37,7 +38,7 @@ const RegisterClient = () => {
 
             <div className="col-span-6 sm:col-span-3">
               <Input
-                label="Last name"
+                placeholder="Last name"
                 id="surname"
                 type="text"
                 register={register}
@@ -61,7 +62,7 @@ const RegisterClient = () => {
 
             <div className="col-span-6">
               <Input
-                label="E-Mail"
+                placeholder="E-Mail"
                 id="mail"
                 type="text"
                 register={register}
@@ -69,15 +70,20 @@ const RegisterClient = () => {
                 required
               />
             </div>
+            <div className="col-span-6">
+              <Input
+                placeholder="Password"
+                id="password"
+                type="password"
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
 
             <div className="col-span-6 mb-3">
-              <label
-                htmlFor="country"
-                className="block text-sm font-medium text-white mb-1"
-              >
-                Country
-              </label>
               <select
+                aria-placeholder="Country"
                 id="country"
                 name="country"
                 autoComplete="country-name"
@@ -98,30 +104,8 @@ const RegisterClient = () => {
 
             <div className="col-span-6">
               <Input
-                label="Address"
+                placeholder="Address"
                 id="address"
-                type="text"
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-
-            <div className="col-span-6 md:col-span-3">
-              <Input
-                label="City"
-                id="city"
-                type="text"
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-
-            <div className="col-span-6 md:col-span-3">
-              <Input
-                label="State / Province"
-                id="region"
                 type="text"
                 register={register}
                 errors={errors}
@@ -139,6 +123,12 @@ const RegisterClient = () => {
             onClick={() => {}}
           />
         </form>
+        <div className="flex justify-end w-full gap-x-2  mt-1 text-white">
+          Already have an account?
+          <Link className="" href="/register">
+            Sign in
+          </Link>
+        </div>
       </AuthContainer>
     </div>
   );

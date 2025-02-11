@@ -33,7 +33,7 @@ const Input: React.FC<IInput> = ({
       </label>
       <input
         className={`${
-          errors[id] ? "border-red-500" : ""
+          errors[id] ? "border-red-500 bg-red-50" : ""
         } w-full p-2 border border-gray-300 rounded-md focus:outline-none`}
         id={id}
         placeholder={placeholder}
