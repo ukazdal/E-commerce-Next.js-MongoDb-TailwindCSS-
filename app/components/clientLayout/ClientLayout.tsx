@@ -10,7 +10,8 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const hideLayout = pathname === "/cart";
+  const hideLayout =
+    pathname === "/cart" || pathname === "/register" || pathname === "/login";
 
   return (
     <>

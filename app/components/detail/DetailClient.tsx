@@ -167,9 +167,8 @@ const DetailClient = ({ product }: { product: Product }) => {
             )} */}
           </div>
         </div>
+        <Tab data={tabData} />
       </Container>
-
-      <Tab data={tabData} />
     </>
   );
 };

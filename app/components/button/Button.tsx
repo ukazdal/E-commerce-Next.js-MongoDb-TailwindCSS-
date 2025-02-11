@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       disabled={diseable}
       onClick={onClick}
-      className={`rounded-lg  px-3 py-3 hover:shadow-lg duration-300 ${
+      className={`rounded-lg  px-3 py-3 hover:shadow-lg duration-300 flex items-center justify-center gap-x-2 ${
         small ? "w-[200px]" : "w-full"
       }
         ${
