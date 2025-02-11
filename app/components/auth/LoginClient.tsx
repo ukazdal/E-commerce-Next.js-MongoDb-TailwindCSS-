@@ -7,14 +7,32 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const LoginClient = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>();
-  const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+    }).then((callback) => {
+      if (callback?.ok) {
+        router.push("/");
+        router.refresh();
+        toast.success("User logged in successfully");
+      }
+      if (callback?.error) {
+        toast.error(callback.error);
+      }
+    });
+  };
   return (
     <div className="bg-gray-800 md:h-screen w-full">
       <AuthContainer className="flex flex-col items-end justify-end w-full max-w-[460px] px-4">
