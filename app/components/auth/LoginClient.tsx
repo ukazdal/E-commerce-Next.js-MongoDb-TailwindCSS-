@@ -68,11 +68,7 @@ const LoginClient = () => {
           <div className="flex items-center justify-center my-2 text-white">
             OR
           </div>
-          <Button
-            text="Google Login"
-            icon={<FaGoogle size={24} />}
-            onClick={() => {}}
-          />
+          <Button text="Google Login" icon={FaGoogle} onClick={() => {}} />
         </form>
         <Link className="flex justify-end  mb-1 text-white" href="/register">
           Create your bew account

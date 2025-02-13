@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "./Logo";
 import Search from "./Search";
 import CardCount from "./CardCount";
@@ -7,7 +6,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import Category from "../home/Category";
 import Container from "../container/Container";
 
-const Navbar = () => {
+const Navbar = async () => {
   return (
     <div className="bg-gray-800 text-white">
       <Container>

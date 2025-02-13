@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
+    "@mapbox/node-pre-gyp": "^2.0.0",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@prisma/client": "^6.3.1",
     "@types/bcrypt": "^5.0.2",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "next": "15.1.6",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
