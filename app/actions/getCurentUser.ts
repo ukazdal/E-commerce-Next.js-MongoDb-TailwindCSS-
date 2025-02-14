@@ -23,7 +23,7 @@ export async function getCurrentUser() {
     return {
       ...currentUser,
       createdAt: new Date(currentUser.createdAt),
-      updatedAt: new Date(currentUser.updateAt), // updatedAt olmalı
+      updatedAt: new Date(currentUser.updatedAt),
       emailVerified: currentUser.emailVerified
         ? new Date(currentUser.emailVerified)
         : null,

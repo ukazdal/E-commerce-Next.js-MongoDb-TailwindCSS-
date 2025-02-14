@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import Search from "./Search";
 import CardCount from "./CardCount";
-import User from "./User";
+import UserLogin from "./UserLogin";
 import HamburgerMenu from "./HamburgerMenu";
 import Category from "../home/Category";
 import Container from "../container/Container";
@@ -21,7 +21,7 @@ const Navbar = async () => {
 
           <div className="col-span-3  md:col-span-2 lg:col-span-3 flex items-center justify-end gap-4">
             <CardCount />
-            <User />
+            <UserLogin currentUser={undefined} />
             <HamburgerMenu />
           </div>
         </div>

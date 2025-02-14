@@ -1,92 +1,100 @@
 "use client";
-
-import Button from "../button/Button";
-import AuthContainer from "../container/AuthContainer";
-import Input from "../input/Input";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa6";
-import SectionTitle from "../sectionTitle/SectionTitle";
+import { FaGoogle } from "react-icons/fa";
 import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { User } from "@prisma/client";
+import { useEffect } from "react";
+import AuthContainer from "../container/AuthContainer";
+import SectionTitle from "../sectionTitle/SectionTitle";
+import Input from "../input/Input";
+import Button from "../button/Button";
 
-const RegisterClient = () => {
+interface RegisterClientProps {
+  currentUser: User | null | undefined;
+}
+const RegisterClient: React.FC<RegisterClientProps> = ({ currentUser }) => {
   const router = useRouter();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>();
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     axios.post("/api/register", data).then(() => {
-      toast.success("User registered successfully");
+      toast.success("Kullanıcı Olusturuldu...");
       signIn("credentials", {
         email: data.email,
         password: data.password,
         redirect: false,
       }).then((callback) => {
         if (callback?.ok) {
-          router.push("/");
+          router.push("/cart");
           router.refresh();
-          toast.success("User logged in successfully");
+          toast.success("Login İşlemi Basarılı...");
         }
+
         if (callback?.error) {
           toast.error(callback.error);
         }
       });
     });
   };
-  return (
-    <div className="bg-gray-800 md:h-screen w-full">
-      <AuthContainer className="flex flex-col  w-full max-w-[460px] px-4">
-        <div className="w-full md:w-[500px] p-3 shadow-lg rounded-md">
-          <SectionTitle title="Register" center />
-          <Input
-            placeholder="Ad"
-            type="text"
-            id="name"
-            register={register}
-            errors={errors}
-            required
-          />
-          <Input
-            placeholder="Email"
-            type="text"
-            id="email"
-            register={register}
-            errors={errors}
-            required
-          />
-          <Input
-            placeholder="Parola"
-            type="password"
-            id="password"
-            register={register}
-            errors={errors}
-            required
-          />
-          <Button text="Kayıt Ol" onClick={handleSubmit(onSubmit)} />
 
-          <div className="text-center my-2 font-bold text-lg">OR</div>
-          <Button
-            text="Google İle Üye Ol"
-            icon={FaGoogle}
-            outline
-            onClick={() => signIn("google")}
-            className="!bg-white !text-black hover:!bg-gray-500"
-          />
-        </div>
-        <div className="flex justify-end w-full gap-x-2  mt-1 text-white">
-          Already have an account?
-          <Link className="" href="/register">
-            Sign in
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/cart");
+      router.refresh();
+    }
+  }, []);
+  return (
+    <AuthContainer>
+      <div className="w-full md:w-[500px] p-3 shadow-lg rounded-md">
+        <SectionTitle title="Register" center />
+        <Input
+          placeholder="Ad"
+          type="text"
+          id="name"
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          placeholder="Email"
+          type="text"
+          id="email"
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          placeholder="Parola"
+          type="password"
+          id="password"
+          register={register}
+          errors={errors}
+          required
+        />
+        <Button text="Kayıt Ol" onClick={handleSubmit(onSubmit)} />
+        <div className="text-center my-2 text-sm text-red-500">
+          Daha Önceden Kayıt Olduysan{" "}
+          <Link className="underline " href="/login">
+            buraya tıkla
           </Link>
         </div>
-      </AuthContainer>
-    </div>
+        <div className="text-center my-2 font-bold text-lg">OR</div>
+        <Button
+          text="Google İle Üye Ol"
+          icon={FaGoogle}
+          outline
+          onClick={() => signIn("google")}
+        />
+      </div>
+    </AuthContainer>
   );
 };
 
