@@ -1,11 +1,15 @@
-import { getSession } from "next-auth/react";
-import { PrismaClient } from "@prisma/client";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
+import prisma from "@/libs/prismadb";
 
-const prisma = new PrismaClient();
+export async function getSession() {
+  return await getServerSession(authOptions);
+}
 
 export async function getCurrentUser() {
   try {
     const session = await getSession();
+
     if (!session?.user?.email) {
       return null;
     }

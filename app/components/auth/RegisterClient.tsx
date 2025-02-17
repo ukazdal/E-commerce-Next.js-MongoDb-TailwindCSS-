@@ -52,49 +52,51 @@ const RegisterClient: React.FC<RegisterClientProps> = ({ currentUser }) => {
     }
   }, []);
   return (
-    <AuthContainer>
-      <div className="w-full md:w-[500px] p-3 shadow-lg rounded-md">
-        <SectionTitle title="Register" center />
-        <Input
-          placeholder="Ad"
-          type="text"
-          id="name"
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          placeholder="Email"
-          type="text"
-          id="email"
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          placeholder="Parola"
-          type="password"
-          id="password"
-          register={register}
-          errors={errors}
-          required
-        />
-        <Button text="Kayıt Ol" onClick={handleSubmit(onSubmit)} />
-        <div className="text-center my-2 text-sm text-red-500">
-          Daha Önceden Kayıt Olduysan{" "}
-          <Link className="underline " href="/login">
-            buraya tıkla
-          </Link>
+    <div className="bg-gray-800 md:h-screen w-full">
+      <AuthContainer className="flex flex-col items-end justify-end w-full max-w-[460px] px-4">
+        <div className="w-full md:w-[500px] p-3 bg-white rounded-md">
+          <SectionTitle title="Register" center />
+          <Input
+            placeholder="Ad"
+            type="text"
+            id="name"
+            register={register}
+            errors={errors}
+            required
+          />
+          <Input
+            placeholder="Email"
+            type="text"
+            id="email"
+            register={register}
+            errors={errors}
+            required
+          />
+          <Input
+            placeholder="Parola"
+            type="password"
+            id="password"
+            register={register}
+            errors={errors}
+            required
+          />
+          <Button text="Kayıt Ol" onClick={handleSubmit(onSubmit)} />
+          <div className="text-center my-2 text-sm text-red-500">
+            Daha Önceden Kayıt Olduysan{" "}
+            <Link className="underline " href="/login">
+              buraya tıkla
+            </Link>
+          </div>
+          <div className="text-center my-2 font-bold text-lg">OR</div>
+          <Button
+            text="Google İle Üye Ol"
+            icon={FaGoogle}
+            outline
+            onClick={() => signIn("google")}
+          />
         </div>
-        <div className="text-center my-2 font-bold text-lg">OR</div>
-        <Button
-          text="Google İle Üye Ol"
-          icon={FaGoogle}
-          outline
-          onClick={() => signIn("google")}
-        />
-      </div>
-    </AuthContainer>
+      </AuthContainer>
+    </div>
   );
 };
 

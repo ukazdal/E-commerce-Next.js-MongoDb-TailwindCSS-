@@ -5,8 +5,10 @@ import UserLogin from "./UserLogin";
 import HamburgerMenu from "./HamburgerMenu";
 import Category from "../home/Category";
 import Container from "../container/Container";
+import { getCurrentUser } from "../../../app/actions/getCurentUser";
 
 const Navbar = async () => {
+  const currentUser = await getCurrentUser();
   return (
     <div className="bg-gray-800 text-white">
       <Container>
@@ -21,7 +23,7 @@ const Navbar = async () => {
 
           <div className="col-span-3  md:col-span-2 lg:col-span-3 flex items-center justify-end gap-4">
             <CardCount />
-            <UserLogin currentUser={undefined} />
+            <UserLogin currentUser={currentUser} />
             <HamburgerMenu />
           </div>
         </div>
