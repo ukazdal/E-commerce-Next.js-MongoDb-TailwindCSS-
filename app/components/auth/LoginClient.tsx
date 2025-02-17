@@ -10,6 +10,7 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Logo from "../navbar/Logo";
 
 const LoginClient = () => {
   const router = useRouter();
@@ -35,6 +36,7 @@ const LoginClient = () => {
   };
   return (
     <div className="bg-gray-800 md:h-screen w-full">
+      <Logo />
       <AuthContainer className="flex flex-col items-end justify-end w-full max-w-[460px] px-4">
         <form
           action="#"

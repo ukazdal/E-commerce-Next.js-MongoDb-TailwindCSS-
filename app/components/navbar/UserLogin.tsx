@@ -11,7 +11,7 @@ interface UserProps {
 const UserLogin: React.FC<UserProps> = ({ currentUser }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  console.log("currentUser ==>", currentUser);
+  //console.log("currentUser ==>", currentUser);
 
   return (
     <div className="hidden md:flex relative">

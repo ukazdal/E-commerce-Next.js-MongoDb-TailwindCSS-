@@ -12,6 +12,7 @@ import AuthContainer from "../container/AuthContainer";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import Input from "../input/Input";
 import Button from "../button/Button";
+import Logo from "../navbar/Logo";
 
 interface RegisterClientProps {
   currentUser: User | null | undefined;
@@ -54,6 +55,7 @@ const RegisterClient: React.FC<RegisterClientProps> = ({ currentUser }) => {
   return (
     <div className="bg-gray-800 md:h-screen w-full">
       <AuthContainer className="flex flex-col items-end justify-end w-full max-w-[460px] px-4">
+        <Logo />
         <div className="w-full md:w-[500px] p-3 bg-white rounded-md">
           <SectionTitle title="Register" center />
           <Input

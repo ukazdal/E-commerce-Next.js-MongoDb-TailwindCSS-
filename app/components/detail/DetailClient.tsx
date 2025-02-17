@@ -26,8 +26,8 @@ const DetailClient = ({ product }: { product: Product }) => {
     inStock: product.stock,
   });
 
-  console.log(productsCartQty, "productsCartQty");
-  console.log(prdCard, "prdCard");
+  //console.log(productsCartQty, "productsCartQty");
+  //console.log(prdCard, "prdCard");
 
   useEffect(() => {
     const controlDisplay: number =
@@ -66,7 +66,7 @@ const DetailClient = ({ product }: { product: Product }) => {
   return (
     <>
       <Container className="mb-10">
-        <div className="grid grid-cols-12 gap-5">
+        <div className="grid grid-cols-12 gap-5 mb-10">
           <div className="col-span-12 md:col-span-6">
             {product.images.map((image: string) => (
               <Image

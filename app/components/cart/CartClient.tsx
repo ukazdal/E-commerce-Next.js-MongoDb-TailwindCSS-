@@ -7,7 +7,8 @@ import Link from "next/link";
 const CartClient = () => {
   const { prdCard } = UseCart();
 
-  console.log(prdCard, "prdCard");
+  //console.log(prdCard, "prdCard");
+
   if (!prdCard || prdCard.length == 0) {
     return <>Sepetinizde ürün bulunmuyor.</>;
   }
