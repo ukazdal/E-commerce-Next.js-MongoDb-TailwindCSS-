@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: {
-    domains: ["cdntr.eticex.com", "images.pexels.com", "images.remotePatterns"],
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

@@ -93,7 +93,7 @@ const Slider: React.FC<SliderProps> = ({
             width={1460}
             alt={sliderData.altIamgeText}
             className=" duration-1000 rounded-t-md"
-            layout="intrinsic"
+            //layout="intrinsic"
           />
         </a>
         {sliderData.title && (

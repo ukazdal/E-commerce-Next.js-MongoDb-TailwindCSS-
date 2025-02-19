@@ -12,10 +12,7 @@ const productsData = [
     discount_rate: 11.33,
     stock: 15,
     badges: { new: false },
-    images: [
-      "https://images.pexels.com/photos/3310709/pexels-photo-3310709.jpeg",
-      "https://images.pexels.com/photos/1292883/pexels-photo-1292883.jpeg",
-    ],
+    images: ["/images/product/p01.jpg", "/images/product/p02.jpg"],
     reviews: [
       {
         user: "Ahmet Y.",
@@ -42,10 +39,7 @@ const productsData = [
     discount_rate: 16.75,
     stock: 8,
     badges: { new: true },
-    images: [
-      "https://images.pexels.com/photos/3310709/pexels-photo-3310709.jpeg",
-      "https://images.pexels.com/photos/1736587/pexels-photo-1736587.jpeg",
-    ],
+    images: ["/images/product/p21.jpg", "/images/product/p22.jpg"],
     reviews: [
       {
         user: "Ayşe T.",
@@ -65,10 +59,7 @@ const productsData = [
     price: 150.0,
     stock: 0,
     badges: { new: false },
-    images: [
-      "https://images.pexels.com/photos/1545314/pexels-photo-1545314.jpeg",
-      "https://images.pexels.com/photos/1211332/pexels-photo-1211332.jpeg",
-    ],
+    images: ["/images/product/p31.jpg", "/images/product/p32.jpg"],
     reviews: [],
   },
   {
@@ -84,10 +75,7 @@ const productsData = [
     discount_rate: 13.47,
     stock: 0,
     badges: { new: true },
-    images: [
-      "https://images.pexels.com/photos/3310709/pexels-photo-3310709.jpeg",
-      "https://images.pexels.com/photos/2437267/pexels-photo-2437267.jpeg",
-    ],
+    images: ["/images/product/p41.jpg", "/images/product/p42.jpg"],
     reviews: [
       {
         user: "Burak D.",
@@ -109,10 +97,7 @@ const productsData = [
     discount_rate: 16.67,
     stock: 5,
     badges: { new: false },
-    images: [
-      "https://images.pexels.com/photos/1029593/pexels-photo-1029593.jpeg",
-      "https://images.pexels.com/photos/4008366/pexels-photo-4008366.jpeg",
-    ],
+    images: ["/images/product/p51.jpg", "/images/product/p52.jpg"],
     reviews: [
       {
         user: "Emre C.",

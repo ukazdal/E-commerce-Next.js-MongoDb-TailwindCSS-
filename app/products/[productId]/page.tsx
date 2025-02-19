@@ -6,6 +6,7 @@ import productsData from "@/app/components/products/Products.data.mocks";
 
 const ProductDetail = () => {
   const params = useParams();
+  if (!params) return <p>Ürün bulunamadı</p>;
   const productId = Number(params.productId);
 
   const product = productsData.find((p) => p.id === productId);

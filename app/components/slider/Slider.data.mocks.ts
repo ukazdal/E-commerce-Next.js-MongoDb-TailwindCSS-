@@ -2,56 +2,48 @@ const dataSlider = {
   imgs: [
     {
       id: 0,
-      smallvalue:
-        "https://cdntr.eticex.com/Dem865/front/images/slider/3/0/7/4/3074.webp",
-      value:
-        "https://cdntr.eticex.com/Dem559/front/images/slider/2/7/7/7/2777.webp",
+      smallvalue: "/images/banner/mini1.jpg",
+      value: "/images/banner/1.jpg",
       title: "",
       description: "",
       detail: "",
-      altIamgeText: "Sldier Name",
+      altIamgeText: "Sldier Name 1",
       button: "",
       link: "",
       lintAlt: "",
     },
     {
       id: 1,
-      smallvalue:
-        "https://cdntr.eticex.com/Dem865/front/images/slider/3/0/7/4/3074.webp",
-      value:
-        "https://cdntr.eticex.com/Dem559/front/images/slider/2/7/7/6/2776.webp",
+      smallvalue: "/images/banner/mini1.jpg",
+      value: "/images/banner/2.jpg",
       title: "",
       description: "",
       detail: "",
-      altIamgeText: "Sldier Name",
+      altIamgeText: "Sldier Name 2",
       button: "",
       link: "",
       lintAlt: "",
     },
     {
       id: 2,
-      smallvalue:
-        "https://cdntr.eticex.com/Dem865/front/images/slider/3/0/7/4/3074.webp",
-      value:
-        "https://cdntr.eticex.com/Dem559/front/images/slider/2/7/7/4/2774.webp",
+      smallvalue: "/images/banner/mini1.jpg",
+      value: "/images/banner/3.jpg",
       title: "",
       description: "",
       detail: "",
-      altIamgeText: "Sldier Name",
+      altIamgeText: "Sldier Name 3",
       button: "",
       link: "",
       lintAlt: "",
     },
     {
       id: 3,
-      smallvalue:
-        "https://cdntr.eticex.com/Dem865/front/images/slider/3/0/7/4/3074.webp",
-      value:
-        "https://cdntr.eticex.com/Dem559/front/images/slider/2/7/7/5/2775.webp",
+      smallvalue: "/images/banner/mini1.jpg",
+      value: "/images/banner/4.jpg",
       title: "",
       description: "",
       detail: "",
-      altIamgeText: "Sldier Name",
+      altIamgeText: "Sldier Name 4",
       button: "",
       link: "",
       lintAlt: "",
