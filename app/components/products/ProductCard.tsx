@@ -81,7 +81,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         )}
 
-        <div className="relative w-full h-[200px] flex">
+        <div className="relative w-full h-[335px] flex">
           {images.length >= 2 ? (
             <div className="w-full h-full overflow-hidden">
               <Image
@@ -89,7 +89,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 alt={title}
                 className="w-full h-full object-cover duration-300"
                 width={335}
-                height={200}
+                height={335}
               />
             </div>
           ) : (
@@ -98,7 +98,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               alt={title}
               className="w-full h-full object-cover"
               width={335}
-              height={200}
+              height={335}
             />
           )}
         </div>

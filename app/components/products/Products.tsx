@@ -17,7 +17,7 @@ const Products = () => {
         link="#"
         linkIcon={<PiArrowFatLineRightDuotone />}
       />
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
         {productsData.map((product) => (
           <ProductCard
             id={product.id.toString()}

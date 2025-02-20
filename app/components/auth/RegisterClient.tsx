@@ -1,4 +1,3 @@
-"use client";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import Link from "next/link";

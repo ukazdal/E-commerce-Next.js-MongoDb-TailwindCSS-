@@ -111,6 +111,141 @@ const productsData = [
       },
     ],
   },
+  {
+    id: 6666123412341,
+    title: "Sırt Çantası",
+    brand: "HikerPack",
+    description:
+      "Dağcılık ve trekking için özel tasarlanmış, ergonomik ve geniş sırt çantası.",
+    longDescription:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?",
+    price: 300.0,
+    discounted_price: 250.0,
+    discount_rate: 16.67,
+    stock: 5,
+    badges: { new: false },
+    images: ["/images/product/p63.jpg", "/images/product/p61.jpg"],
+    reviews: [
+      {
+        user: "Emre C.",
+        comment: "Çok kullanışlı ve geniş, uzun yürüyüşlerde bile rahat!",
+        rating: 5,
+      },
+      {
+        user: "Zeynep A.",
+        comment: "Malzeme kalitesi iyi ama askıları biraz rahatsız etti.",
+        rating: 4,
+      },
+    ],
+  },
+  {
+    id: 7777123412341,
+    title: "Sırt Çantası",
+    brand: "HikerPack",
+    description:
+      "Dağcılık ve trekking için özel tasarlanmış, ergonomik ve geniş sırt çantası.",
+    longDescription:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?",
+    price: 300.0,
+    discounted_price: 250.0,
+    discount_rate: 16.67,
+    stock: 5,
+    badges: { new: false },
+    images: ["/images/product/p71.jpg", "/images/product/p72.jpg"],
+    reviews: [
+      {
+        user: "Emre C.",
+        comment: "Çok kullanışlı ve geniş, uzun yürüyüşlerde bile rahat!",
+        rating: 5,
+      },
+      {
+        user: "Zeynep A.",
+        comment: "Malzeme kalitesi iyi ama askıları biraz rahatsız etti.",
+        rating: 4,
+      },
+    ],
+  },
+  {
+    id: 8888123412341,
+    title: "Sırt Çantası",
+    brand: "HikerPack",
+    description:
+      "Dağcılık ve trekking için özel tasarlanmış, ergonomik ve geniş sırt çantası.",
+    longDescription:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?",
+    price: 300.0,
+    discounted_price: 250.0,
+    discount_rate: 16.67,
+    stock: 5,
+    badges: { new: false },
+    images: ["/images/product/p73.jpg", "/images/product/p74.jpg"],
+    reviews: [
+      {
+        user: "Emre C.",
+        comment: "Çok kullanışlı ve geniş, uzun yürüyüşlerde bile rahat!",
+        rating: 5,
+      },
+      {
+        user: "Zeynep A.",
+        comment: "Malzeme kalitesi iyi ama askıları biraz rahatsız etti.",
+        rating: 4,
+      },
+    ],
+  },
+  {
+    id: 888888123412341,
+    title: "Sırt Çantası",
+    brand: "HikerPack",
+    description:
+      "Dağcılık ve trekking için özel tasarlanmış, ergonomik ve geniş sırt çantası.",
+    longDescription:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?",
+    price: 300.0,
+    discounted_price: 250.0,
+    discount_rate: 16.67,
+    stock: 5,
+    badges: { new: false },
+    images: ["/images/product/p53.jpg", "/images/product/p54.jpg"],
+    reviews: [
+      {
+        user: "Emre C.",
+        comment: "Çok kullanışlı ve geniş, uzun yürüyüşlerde bile rahat!",
+        rating: 5,
+      },
+      {
+        user: "Zeynep A.",
+        comment: "Malzeme kalitesi iyi ama askıları biraz rahatsız etti.",
+        rating: 4,
+      },
+    ],
+  },
+  {
+    id: 99999123412341,
+    title: "Sırt Çantası",
+    brand: "HikerPack",
+    description:
+      "Dağcılık ve trekking için özel tasarlanmış, ergonomik ve geniş sırt çantası.",
+    longDescription:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente, explicabo odio nam a aspernatur pariatur minima adipisci suscipit, non illum nihil delectus commodi possimus, dolores nesciunt? Molestias possimus earum nostrum voluptate aliquid officia ratione excepturi esse distinctio impedit delectus rerum non vel, magnam pariatur. Quia voluptatibus dolore obcaecati natus?",
+    price: 300.0,
+    discounted_price: 250.0,
+    discount_rate: 16.67,
+    stock: 5,
+    badges: { new: false },
+    images: ["/images/product/p43.jpg", "/images/product/p34.jpg"],
+    reviews: [
+      {
+        user: "Emre C.",
+        comment: "Çok kullanışlı ve geniş, uzun yürüyüşlerde bile rahat!",
+        rating: 5,
+      },
+      {
+        user: "Zeynep A.",
+        comment: "Malzeme kalitesi iyi ama askıları biraz rahatsız etti.",
+        rating: 4,
+      },
+    ],
+  },
 ];
 
 export default productsData;
